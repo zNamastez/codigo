@@ -1,0 +1,795 @@
+# Diário Expressão Corporal APAE V-0.1
+
+# IMPORTS
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+import time
+
+# VARIÁVEIS
+navegador = webdriver.Edge()
+usuario_luiza = 99250403100
+senha_luiza = 'Luiza'
+
+# Passo1: Abrir o navegador
+navegador.get(
+    "https://siap.educacao.go.gov.br/login.aspx?ReturnUrl=%2fPlanejamentoProfessorTurmaListagem.aspx")
+navegador.maximize_window()
+
+# Passo 2: Fazer login
+navegador.find_element(
+    By.XPATH, '//*[@id="txtLogin"]').send_keys(usuario_luiza)
+navegador.find_element(By.XPATH, '//*[@id="txtSenha"]').send_keys(senha_luiza)
+navegador.find_element(By.XPATH, '//*[@id="btnLogon"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="txtLogin"]').send_keys(usuario_luiza)
+navegador.find_element(By.XPATH, '//*[@id="txtSenha"]').send_keys(senha_luiza)
+navegador.find_element(By.XPATH, '//*[@id="btnLogon"]').click()
+
+# Passo 3: Planejamento (Expressão Corporal)
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[3]/div/div[2]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="SEEPageMenu"]/div/div[2]/li[1]/a').click()  # Seleciona (Planejamento do professor por turma)
+the_id = 'cphFuncionalidade_cphCampos_ddlTurno'
+element = navegador.find_element(By.ID, the_id)
+select_element = Select(element)
+select_element.select_by_value('2')
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnListar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_gdvListagem"]/tbody/tr[5]/td[6]').click()  # Seleciona a matéria
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnEditar"]').click()
+time.sleep(0.5)
+
+# dia 24/Janeiro
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[1]/table/tbody/tr[4]/td[3]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 31/Janeiro
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[1]/table/tbody/tr[5]/td[3]/div').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 1/Fevereiro
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[2]/table/tbody/tr[1]/td[2]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[2]/table/tbody/tr[1]/td[2]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 07/Fevereiro
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[2]/table/tbody/tr[2]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 14/Fevereiro
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[2]/table/tbody/tr[3]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 28/Fevereiro
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[2]/table/tbody/tr[5]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 08/Fevereiro
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[2]/table/tbody/tr[2]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[2]/table/tbody/tr[2]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 15/Fevereiro
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[2]/table/tbody/tr[3]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[2]/table/tbody/tr[3]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 07/Março
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[2]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 14/Março
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[3]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 21/Março
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[4]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 28/Março
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[5]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 01/Março
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[1]/td[2]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[1]/td[2]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 08/Março
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[2]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[2]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 22/Março
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[4]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[4]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 29/Março
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[5]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[3]/table/tbody/tr[5]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 04/Abril
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[2]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 11/Abril
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[3]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 18/Abril
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[4]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 25/Abril
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[5]/td[3]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 05/Abril
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[2]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[2]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 12/Abril
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[3]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[3]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 19/Abril
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[4]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[4]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+# dia 26/Abril
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[5]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div').click()  # Div aula 1
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_CalendarioPlanejamento"]/div[4]/table/tbody/tr[5]/td[4]').click()  # Seleciona a data
+navegador.find_element(
+    By.XPATH, '//*[@id="FormularioPrincipal"]/div[7]/div[2]/div[2]').click()  # Div aula 2
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt3"]').click()
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt7"]').click()  # Seleciona Processos de criações
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').click()
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_txtMetodologia"]').send_keys("CRIAR COREOGRAFIAS")
+time.sleep(1)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_cphCampos_treeViewt101"]').click()
+time.sleep(0.5)
+navegador.find_element(
+    By.XPATH, '//*[@id="cphFuncionalidade_btnAlterar"]').click()
+
+time.sleep(60)
